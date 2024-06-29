@@ -1,7 +1,7 @@
 // Required processes defined here.
 const fs = require("fs");
 const inquirer = require("inquirer");
-const { Circle, Square, Trangle } = require("./lib/shapes.js");
+const { Circle, Square, Triangle } = require("./lib/shapes.js");
 const SVG = require("./lib/svg");
 
 // create prompts for user for options they wat to use on their logo. Then call a fuction to render logo.
@@ -45,7 +45,7 @@ inquirer
     let shape;
     if (res.logoShape === "circle") shape = new Circle();
     else if (res.logoShape === "square") shape = new Square();
-    else shape = new Trangle();
+    else shape = new Triangle();
     shape.setColor(res.shapeColor);
     const svg = new SVG();
     svg.setText(res.logoText, res.textColor);
